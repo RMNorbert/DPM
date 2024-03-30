@@ -1,0 +1,21 @@
+# arguments configuration
+# dataset_id
+DATASET_ID_PROVIDING_ARGUMENT: --image_list
+DEFAULT_DATASET_ID_SOURCE: image_list
+DATASET_ID_ARGUMENT_HELP: The filename that contains the split and image IDs of the images to download. Example - test/id131345
+# parallel process
+PARALLEL_PROCESS_ARGUMENT: --processes
+DEFAULT_PARALLEL_PROCESSES: 6
+PARALLEL_PROCESS_HELP: The number of parallel processes to use (default is 6).
+# output directory
+OUTPUT_ARGUMENT: --output_folder
+DEFAULT_OUTPUT_FOLDER: null
+OUTPUT_HELP: Folder where to download the images.
+# request type
+REQUEST_TYPE_ARGUMENT: --request
+DEFAULT_REQUEST_TYPE: True
+REQUEST_TYPE_HELP: Set it to true to use python requests or false to use boto3(AWS SDK) to download
+# bucket name
+BUCKET_NAME_ARGUMENT: --bucket_name
+DEFAULT_BUCKET_NAME: null
+BUCKET_NAME_HELP: Provide the name for S3 bucket where the images are located. Provide only if you would like to download from AWS Simple Storage Service

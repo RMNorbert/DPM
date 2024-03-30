@@ -1,0 +1,3 @@
+DATASET_VALIDATOR_REGEX: (test|train|validation)/(.*)
+DRIVE_PREFIX: https://docs.google.com/uc?export=download&confirm=t&id=
+DOWNLOAD_DATA_TYPE: '.jpg'
