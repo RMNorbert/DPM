@@ -6,7 +6,8 @@ import sys
 from filter.dataset_filterer import DatasetFilterer
 from utils.configuration_provider import load_configuration
 
-CONFIG: Dict[str, Any] = load_configuration('./configuration/filter_configuration.yaml')
+CONFIG: Dict[str, Any] = load_configuration(
+    './configuration/filter_configuration.yaml')
 
 
 def get_args() -> Namespace:
