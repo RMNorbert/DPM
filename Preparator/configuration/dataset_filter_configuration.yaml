@@ -1,0 +1,3 @@
+DATASET_SUBSET: ['train', 'validation', 'test']
+IMAGE_INFORMATION_MESSAGE: 'List appended with image '
+LABEL_INFORMATION_MESSAGE: 'File created for label '

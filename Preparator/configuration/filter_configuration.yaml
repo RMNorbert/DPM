@@ -1,0 +1,21 @@
+# arguments configuration
+# filter type
+FILTER_TYPE_ARGUMENT: --filter-type
+DEFAULT_FILTER_TYPE: img
+FILTER_TYPE_HELP: The result of filtering. img - only the image related file generated, label - both the image and label related files are generated. If nothing provided only the image related file will be generated.
+IMAGE_TYPE: img
+IMAGE_AND_LABEL_TYPE: label
+# output directory
+OUTPUT_ARGUMENT: --output
+DEFAULT_OUTPUT_DIRECTORY: '.'
+DEFAULT_OUTPUT_FILE_NAME: image_list
+OUTPUT_HELP: Directory and the file name where the the filtered data will be saved. If nothing provided then the default directory will be the current working directory and the file name will be image_list.
+# csv data
+CSV_DATA_LIST_ARGUMENT: --csv-list
+DEFAULT_CSV_DATA_LIST: null
+CSV_DATA_LIST_HELP: The list of csv files for filtering. You can give one or multiple files separated by a space.
+ON_LOAD_ERROR_MESSAGE: No file were provided to --csv-list
+# label data
+LABEL_DATA_LIST_ARGUMENT: --label-list
+DEFAULT_LABEL_DATA_LIST: null
+LABEL_DATA_LIST_HELP: The list of labels for filtering. You can give one or multiple labels separated by a space.
