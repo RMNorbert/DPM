@@ -38,33 +38,48 @@
 ```commandline
  pip install -r requirements.txt
 ```
-Arguments can be set in the configurations or by providing them in the command line
+
 
 ### Commands to filter examples:
+
+- In case of arguments provided in the configurations: 
 
 ```commandline
 python filter.py
 ```
 
-
+- By providing them in the command line
 
 ```commandline
 python filter.py --filter-type img  --csv-list example.csv example2.csv --label-list example1 example2
 ```
-The ```--output``` (optional, default is the current directory)
 
-| arg          | description |
-|--------------|-------------|
-| --filter-type|             |
-| --output     |             |
-| --csv-list   |             |
-| --label-list |             |
+| arg          | description |  default value| 
+|--------------|-------------|---------------|
+| --filter-type| The result of filtering. img - only the image, label - both the image and label related files are generated.| img |
+| --output     | The path and the file name where the filtered data will be saved. |   ./image_list |
+| --csv-list   | The list of csv files to use for filtering. You can give one or multiple files separated by a space. | None |
+| --label-list | The list of labels(or field values) to use for filtering. You can give one or multiple labels separated by a space. | None |
 
 ---
 
 ### Commands to download examples:
+- In case of arguments provided in the configurations: 
 
 ```commandline
 python download.py
 ```
 
+- By providing them in the command line
+
+```commandline
+python filter.py --filter-type img  --csv-list example.csv example2.csv --label-list example1 example2
+```
+
+| arg             | description                                                                             |  default value              | 
+|-----------------|-----------------------------------------------------------------------------------------|-----------------------------|
+| --image_list    | The filename that contains the split and image IDs of the images to download.           | image_list                  |
+| --processes     | The number of parallel processes to use .                                               | 6                           |
+| --output_folder | Folder where to download the images.                                                    | None (the current directory)|
+| --request       | The download source type. True to use requests, false to use boto3(AWS SDK) to download | True                        |
+| --bucket_name   | The name of the S3 bucket where the images are located.                                 | None                        |
