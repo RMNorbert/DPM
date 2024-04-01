@@ -4,7 +4,7 @@ import argparse
 import os
 import sys
 from filter.dataset_filterer import DatasetFilterer
-from utils.configuration_provider import load_configuration
+from util.utils import load_configuration
 
 CONFIG: Dict[str, Any] = load_configuration(
     './configuration/filter_configuration.yaml')
@@ -29,7 +29,7 @@ def get_args() -> Namespace:
 
 def change_to_path(filename_list: List[str]) -> List[str]:
     try:
-        return [os.path.join('/', filename) for filename in filename_list]
+        return [os.path.join('./', filename) for filename in filename_list]
     except TypeError:
         sys.exit(CONFIG['ON_LOAD_ERROR_MESSAGE'])
 

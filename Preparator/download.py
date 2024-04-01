@@ -3,7 +3,7 @@ from argparse import Namespace
 import argparse
 from download.s3_dataset_downloader import S3DatasetDownloader
 from download.dataset_downloader import DatasetDownloader
-from utils.configuration_provider import load_configuration
+from util.utils import load_configuration
 
 CONFIG: Dict[str, Any] = load_configuration(
     'configuration/download_configuration.yaml')
