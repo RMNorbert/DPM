@@ -27,7 +27,7 @@
 
 - Filter
   - Filter the dataset according to specific labels (or field values), and extract label-related(field related) data based on specific field values.
-    - Currently filtering support csv files for source
+    - Currently filtering support csv files for source and label creation done according to yolo formatting
 
 ---
 ## To run
@@ -54,12 +54,12 @@ python filter.py
 python filter.py --filter-type img  --csv-list example.csv example2.csv --label-list example1 example2
 ```
 
-| arg          | description |  default value| 
-|--------------|-------------|---------------|
-| --filter-type| The result of filtering. img - only the image, label - both the image and label related files are generated.| img |
-| --output     | The path and the file name where the filtered data will be saved. |   ./image_list |
-| --csv-list   | The list of csv files to use for filtering. You can give one or multiple files separated by a space. | None |
-| --label-list | The list of labels(or field values) to use for filtering. You can give one or multiple labels separated by a space. | None |
+| arg          | description                                                                                                         | default value         | 
+|--------------|---------------------------------------------------------------------------------------------------------------------|-----------------------|
+| --filter-type| The result of filtering. img - only the image, label - both the image and label related files are generated.        | img                   |
+| --output     | The path and the file name where the filtered data will be saved.                                                   | ./download/image_list |
+| --csv-list   | The list of csv files to use for filtering. You can give one or multiple files separated by a space.                | None                  |
+| --label-list | The list of labels(or field values) to use for filtering. You can give one or multiple labels separated by a space. | None                  |
 
 ---
 
@@ -76,10 +76,10 @@ python download.py
 python filter.py --filter-type img  --csv-list example.csv example2.csv --label-list example1 example2
 ```
 
-| arg             | description                                                                             |  default value              | 
-|-----------------|-----------------------------------------------------------------------------------------|-----------------------------|
-| --image_list    | The filename that contains the split and image IDs of the images to download.           | image_list                  |
-| --processes     | The number of parallel processes to use .                                               | 6                           |
-| --output_folder | Folder where to download the images.                                                    | None (the current directory)|
-| --request       | The download source type. True to use requests, false to use boto3(AWS SDK) to download | True                        |
-| --bucket_name   | The name of the S3 bucket where the images are located.                                 | None                        |
+| arg             | description                                                                                |  default value              | 
+|-----------------|--------------------------------------------------------------------------------------------|-----------------------------|
+| --image_list    | The path and the filename that contains the split and image IDs of the images to download. | ./download/image_list       |
+| --processes     | The number of parallel processes to use .                                                  | 6                           |
+| --output_folder | Folder where to download the images.                                                       | ./download                  |
+| --request       | The download source type. True to use requests, false to use boto3(AWS SDK) to download    | True                        |
+| --bucket_name   | The name of the S3 bucket where the images are located.                                    | None                        |

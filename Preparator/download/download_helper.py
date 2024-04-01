@@ -1,15 +1,12 @@
-import os
 import re
-from typing import Dict, Any, Generator, Final
+from typing import Dict, Any, Generator
 from tqdm import tqdm
 from concurrent import futures
 
-from utils.configuration_provider import load_configuration
+from util.utils import *
 
 CONFIG: Dict[str, Any] = load_configuration(
     './configuration/download_helper_configuration.yaml')
-STRING: Final = str
-BYTE: Final = bytes
 
 
 def parse_image_list(regex: str, image: str) -> Generator[tuple[str, str], Any, None]:
@@ -30,17 +27,6 @@ def read_image_list_file(image_list_file: str) -> Generator[str, str, None]:
     with open(image_list_file, 'r') as f:
         for line in f:
             yield line.strip().replace(CONFIG['ORIGINAL_IMAGE_TYPE'], CONFIG['NEW_IMAGE_NEW_TYPE'])
-
-
-def create_output_folder_if_not_exists(folder: STRING | BYTE) -> STRING | BYTE:
-    try:
-        folder: STRING | BYTE = folder or os.path.join(
-            CONFIG['DEFAULT_DIRECTORY'], CONFIG['DEFAULT_FOLDER_NAME'])
-        if not os.path.exists(folder):
-            os.makedirs(folder)
-        return folder
-    except OSError as e:
-        print(f"{CONFIG['ERROR_MESSAGE']}{e}")
 
 
 def initialize_bar(number_of_files: int) -> tqdm:

@@ -1,4 +1,3 @@
 DATASET_VALIDATOR_REGEX: (test|train|validation)/([a-fA-F0-9]*)
-DEFAULT_BUCKET: null
-DOWNLOAD_DATA_TYPE: .jpg
+DOWNLOAD_DATA_TYPE: '.jpg'
 ERROR_MESSAGE: ERROR when downloading image
