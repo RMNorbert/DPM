@@ -7,7 +7,7 @@ IMAGE_TYPE: img
 IMAGE_AND_LABEL_TYPE: label
 # output directory
 OUTPUT_ARGUMENT: --output
-DEFAULT_OUTPUT_DIRECTORY: '.'
+DEFAULT_OUTPUT_DIRECTORY: './download'
 DEFAULT_OUTPUT_FILE_NAME: image_list
 OUTPUT_HELP: Directory and the file name where the the filtered data will be saved. If nothing provided then the default directory will be the current working directory and the file name will be image_list.
 # csv data
