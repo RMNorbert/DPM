@@ -17,7 +17,8 @@ class S3DatasetDownloader:
 
     def download_s3_image(self, split: str, image_id: str, output_folder: STRING | BYTE) -> None:
         try:
-            download_folder: STRING | BYTE = create_output_folder_if_not_exists(output_folder, split)
+            download_folder: STRING | BYTE = create_output_folder_if_not_exists(
+                output_folder, split)
             self.bucket.download_file(f"{split}/{image_id}{CONFIG['DOWNLOAD_DATA_TYPE']}",
                                       os.path.join(f'{download_folder}',
                                                    f"{image_id}{CONFIG['DOWNLOAD_DATA_TYPE']}"))

@@ -1,4 +1,5 @@
-import yaml, os
+import yaml
+import os
 from typing import Dict, Any, Final
 
 STRING: Final = str

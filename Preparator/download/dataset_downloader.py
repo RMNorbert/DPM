@@ -15,7 +15,8 @@ class DatasetDownloader:
 
     def download_image(self, split: str, image_id: str, output_folder: STRING | BYTE) -> None:
         response: Response = get(self.DRIVE_PREFIX + image_id)
-        download_folder: STRING | BYTE = create_output_folder_if_not_exists(output_folder, split)
+        download_folder: STRING | BYTE = create_output_folder_if_not_exists(
+            output_folder, split)
         filename: str = os.path.join(
             f"{download_folder}", f"{image_id}{CONFIG['DOWNLOAD_DATA_TYPE']}")
         if response.status_code == 200:
