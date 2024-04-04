@@ -37,7 +37,7 @@ class DatasetFilterer:
                                 print(
                                     CONFIG['IMAGE_INFORMATION_MESSAGE'], image_id)
         except TypeError as exception:
-            print("An error occurred:", exception)
+            print(CONFIG['ERROR_MESSAGE_PREFIX'], exception)
 
     def create_filtered_image_id_txt_file_with_label_txt_file(self) -> None:
         for i, filename in enumerate(self.csv_file_path_list):
@@ -54,7 +54,10 @@ class DatasetFilterer:
                             with open(self.image_list_file_path, 'a') as image_list_file:
                                 image_list_file.write(image_info)
                                 curr_img_label = os.path.join(
-                                    './download/', '{}/label/{}.txt'.format(self.dataset_subset_list[i], image_id))
+                                    '{}'.format(CONFIG['STORAGE_MAIN_FOLDER']),
+                                    '{}{}{}.txt'.format(self.dataset_subset_list[i],
+                                                        CONFIG['LABEL_STORAGE_FOLDER'],
+                                                        image_id))
                                 print(
                                     CONFIG['IMAGE_INFORMATION_MESSAGE'], image_id)
 
@@ -64,7 +67,5 @@ class DatasetFilterer:
                                     print(
                                         CONFIG['LABEL_INFORMATION_MESSAGE'], image_id)
 
-                    except ValueError:
-                        print("Error: Invalid data format in CSV file.")
                     except Exception as e:
-                        print("Error:", e)
+                        print(CONFIG['ERROR_MESSAGE_PREFIX'], e)
