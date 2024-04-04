@@ -1,3 +1,6 @@
 DATASET_SUBSET: ['train', 'validation', 'test']
 IMAGE_INFORMATION_MESSAGE: 'List appended with image '
 LABEL_INFORMATION_MESSAGE: 'File created for label '
+ERROR_MESSAGE_PREFIX: "An error occurred:"
+STORAGE_MAIN_FOLDER: './download/'
+LABEL_STORAGE_FOLDER: '/label/'
